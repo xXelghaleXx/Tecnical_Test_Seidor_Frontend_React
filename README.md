@@ -1,6 +1,6 @@
 # 🎨 SWAPI FORCESEARCH - Frontend
 
-Bienvenido al frontend de la Prueba Técnica Seidor. Una aplicación moderna, responsive y estéticamente atractiva desarrollada con **React 19**, **TypeScript** y **Vite**, desplegada en **Vercel** y alojada también en **GitHub Pages**.
+Bienvenido al frontend de la Prueba Técnica Seidor. Una aplicación moderna, responsive y estéticamente atractiva desarrollada con **React 19**, **TypeScript** y **Vite**, desplegada en **Vercel** y este es el link para probarla : https://tecnical-test-seidor-frontend-react.vercel.app/ .
 
 ## 🌟 Características Principales
 
