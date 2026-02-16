@@ -1,4 +1,4 @@
-# 🎨 Star Wars Enterprise Explorer - Frontend
+# 🎨 SWAPI FORCESEARCH - Frontend
 
 Bienvenido al frontend de la Prueba Técnica Seidor. Una aplicación moderna, responsive y estéticamente atractiva desarrollada con **React 19**, **TypeScript** y **Vite**, desplegada en **Vercel** y alojada también en **GitHub Pages**.
 
