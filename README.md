@@ -243,4 +243,4 @@ const api = axios.create({
 
 ---
 
-**Desarrollado con ❤️ para la Prueba Técnica Seidor 2026**
+**Desarrollado con ❤️ para la Prueba Técnica Seidor 2026 v1.0**
