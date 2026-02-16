@@ -180,4 +180,21 @@ Aquí están los errores más comunes que comete la gente (y cómo arreglarlos):
 
 ---
 
-**Desarrollado con ❤️ para la Prueba Técnica Seidor 2026**
+## ✅ Pruebas y Validación (Evidencia)
+
+La aplicación ha sido validada mediante procesos de compilación y verificación de tipos.
+
+**Estado del Build (`npm run build`):**
+```bash
+vite v6.0.0 building for production...
+✓ 1767 modules transformed.
+dist/index.html                   0.56 kB
+dist/assets/index.css             16.55 kB
+dist/assets/index.js              243.89 kB
+✓ built in 1.48s
+```
+
+---
+
+**Desarrollado por Adrian Nuñuvero Ochoa con cariño para la Prueba Técnica Seidor 2026**
+
