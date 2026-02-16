@@ -1,188 +1,139 @@
-# 🎨 SWAPI FORCESEARCH - Frontend (Manual Completo)
+# SEIDOR SWAPI - Frontend React Application
+⭐ Aplicación Frontend para consumir SWAPI (Star Wars API) ⭐
 
-Bienvenido. Si estás leyendo esto, es porque quieres instalar y ejecutar el Frontend de la **Prueba Técnica Seidor**.
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E)
 
-Este documento ha sido diseñado para ser **"A prueba de errores"**. No importa si nunca has tocad una terminal o si eres un experto, aquí encontrarás **CADA PASO** detallado para que nada falle.
-
----
-
-## � Índice de Contenidos
-
-1.  [¿Qué necesitas instalar antes? (Requisitos)](#1-qué-necesitas-instalar-antes-requisitos)
-2.  [Descargar el Proyecto](#2-descargar-el-proyecto)
-3.  [Instalar las Librerías (Dependencias)](#3-instalar-las-librerías-dependencias)
-4.  [Configuración Secreta (.env)](#4-configuración-secreta-env)
-5.  [¡A Correr! (Ejecutar en tu PC)](#5-a-correr-ejecutar-en-tu-pc)
-6.  [Subir a Internet (Despliegue en Vercel)](#6-subir-a-internet-despliegue-en-vercel)
-7.  [¿Algo salió mal? (Solución de Problemas)](#7-algo-salió-mal-solución-de-problemas)
-
----
-
-## 1. ¿Qué necesitas instalar antes? (Requisitos)
-
-Antes de tocar el código, necesitamos preparar tu computadora.
-
-### A. Instalar Node.js (El motor)
-Node.js es lo que permite ejecutar JavaScript fuera del navegador. Sin esto, nada funciona.
-
-1.  Ve a la página oficial: [nodejs.org](https://nodejs.org/)
-2.  Descarga la versión que dice **"LTS"** (Long Term Support). Es la más estable (actualmente v20 o v22).
-3.  Instálalo como cualquier programa (Next, Next, Next, Finish).
-
-### B. Instalar Git (Para descargar el código)
-1.  Ve a: [git-scm.com](https://git-scm.com/)
-2.  Descarga e instala la versión para Windows.
-3.  Durante la instalación, puedes dejar todas las opciones por defecto.
-
-### C. (Opcional pero Recomendado) Visual Studio Code
-Es el mejor editor para ver el código.
-1.  Descárgalo aquí: [code.visualstudio.com](https://code.visualstudio.com/)
+## 📋 Tabla de Contenidos
+1.  [Descripción](#-descripción)
+2.  [Características](#-características)
+3.  [Tecnologías](#-tecnologías)
+4.  [Requisitos Previos](#-requisitos-previos)
+5.  [Instalación](#-instalación)
+6.  [Configuración](#-configuración)
+7.  [Ejecución](#-ejecución)
+8.  [Testing](#-testing)
+9.  [Estructura del Proyecto](#-estructura-del-proyecto)
+10. [Funcionalidades Principales](#-funcionalidades-principales)
+11. [Decisiones Técnicas](#-decisiones-técnicas)
+12. [Deploy](#-deploy)
 
 ---
 
-## 2. Descargar el Proyecto
+## 🚀 Descripción
+Esta aplicación **React + TypeScript** permite explorar el universo de Star Wars mediante el consumo de una arquitectura de microservicios en AWS. Los usuarios pueden buscar personajes, visualizar información detallada y gestionar su propia lista de favoritos persistente.
 
-Ahora vamos a traer el código a tu carpeta.
+La aplicación destaca por su diseño moderno "Galáctico", su rendimiento optimizado con Vite y su robustez gracias al tipado estático.
 
-1.  Crea una carpeta en tu Escritorio llamada `PruebaSeidor`.
-2.  Abre esa carpeta.
-3.  Haz clic derecho en un espacio vacío y selecciona **"Open Git Bash here"** (si instalaste Git) o abre una terminal (CMD o PowerShell) y navega hasta ahí.
-4.  Escribe el siguiente comando y presiona ENTER:
+---
+
+## ✨ Características
+**Funcionalidades implementadas:**
+
+### 🔍 Búsqueda Avanzada
+-   **Búsqueda Global**: Encuentra personajes por nombre instantáneamente.
+-   **Integración SWAPI**: Consume datos reales de la API de Star Wars.
+-   **Filtrado Inteligente**: Los personajes favoritos se gestionan visualmente.
+
+### ⭐ Gestión de Favoritos
+-   **Persistencia**: Guardado en base de datos MySQL (vía API Backend).
+-   **CRUD Completo**: Agregar y Eliminar favoritos con feedback inmediato.
+-   **Vista Dedicada**: Sección exclusiva para gestionar tus personajes preferidos.
+
+### 🎨 UI/UX Moderna
+-   **Diseño Responsivo**: Adaptado perfectamente a móviles, tablets y desktop.
+-   **Tema Oscuro**: Estética inmersiva inspirada en Star Wars.
+-   **Feedback Visual**: Notificaciones Toast y estados de carga (Spinners).
+
+---
+
+## 🛠 Tecnologías
+-   **React 19**: Biblioteca principal de UI (aprovechando las últimas mejoras).
+-   **TypeScript**: Tipado estático para asegurar código libre de errores.
+-   **Vite**: Build tool de última generación (Hot Module Replacement instantáneo).
+-   **Axios**: Cliente HTTP robusto con interceptores para manejo de errores.
+-   **CSS Modules**: Estilos encapsulados para evitar colisiones.
+-   **ESLint**: Linter para mantener la calidad del código.
+
+---
+
+## 📦 Requisitos Previos
+Antes de comenzar, asegúrate de tener instalado:
+
+-   **Node.js** >= 18.x
+-   **npm** >= 9.x
+-   **Git**
+
+---
+
+## 💻 Instalación
+
+1.  **Clonar el repositorio:**
+    ```bash
+    git clone <URL_DEL_REPO>
+    cd frontend
+    ```
+
+2.  **Instalar dependencias:**
+    ```bash
+    npm install
+    ```
+
+---
+
+## ⚙️ Configuración
+
+### Variables de Entorno
+Crea un archivo `.env` en la raíz del proyecto. Este paso es **CRÍTICO** para conectar con los microservicios.
 
 ```bash
-git clone https://github.com/TU_USUARIO/NOMBRE_DEL_REPO.git
-```
-*(Reemplaza el link con el de tu repositorio real)*
-
-5.  Ahora verás una carpeta nueva. Entra en ella con el comando:
-
-```bash
-cd frontend
-```
-**¡IMPORTANTE!**: Asegúrate de estar dentro de la carpeta `frontend`. Si escribes `ls` (o `dir` en Windows) deberías ver un archivo llamado `package.json`.
-
----
-
-## 3. Instalar las Librerías (Dependencias)
-
-El código necesita muchas herramientas externas (librerías) para funcionar (React, Vite, etc.). Vamos a descargarlas automáticamente.
-
-1.  En tu terminal (dentro de la carpeta `frontend`), escribe:
-
-```bash
-npm install
+cp .env.example .env
+# O crea uno nuevo
 ```
 
-2.  Presiona ENTER.
-3.  Verás una barra de carga y mucho texto pasando. **Espera a que termine**.
-4.  Si todo sale bien, volverás a ver la línea para escribir comandos y aparecerá una carpeta llamada `node_modules` en tu proyecto.
-
----
-
-## 4. Configuración Secreta (.env)
-
-Este paso es **CRÍTICO**. La aplicación necesita saber la dirección de tu Backend (API) para funcionar.
-
-1.  Abre la carpeta del proyecto en **Visual Studio Code**.
-2.  Busca en la lista de archivos a la izquierda.
-3.  Haz clic derecho en un espacio vacío de la lista de archivos y elige **"New File"** (Nuevo Archivo).
-4.  Nómbralo EXACTAMENTE así (con el punto al inicio):
-    `.env`
-5.  Abre ese archivo `.env` y pega lo siguiente dentro:
+**MUESTRA DEL ARCHIVO `.env`:**
 
 ```ini
-# API Gateway para operaciones GET (people, favorites)
+# API Gateway para obtener personajes y favoritos (GET)
 VITE_API_GET_URL=https://y76a850dh4.execute-api.us-east-1.amazonaws.com
 
-# API Gateway para operaciones POST/DELETE (create/delete favorites)
+# API Gateway para crear y eliminar favoritos (POST/DELETE)
 VITE_API_POST_URL=https://lvryteny8c.execute-api.us-east-1.amazonaws.com
 ```
 
-6.  **CAMBIA LA URL**: Borra `https://tu-api-gateway-url...` y pon la URL real que obtuviste al desplegar tu Backend en AWS (debería terminar en `.amazonaws.com` o similar, sin la barra `/` al final).
-
-7.  Guarda el archivo (`Ctrl + S`).
+> **Nota**: Estas URLs corresponden al despliegue actual en AWS. Si despliegas tu propio backend, reemplázalas.
 
 ---
 
-## 5. ¡A Correr! (Ejecutar en tu PC)
+## 🚀 Ejecución
 
-¡Llegó el momento de la verdad!
-
-1.  En la terminal, escribe:
-
+### Modo Desarrollo
+Inicia el servidor local con recarga rápida:
 ```bash
 npm run dev
 ```
+📍 Disponible en: `http://localhost:5173`
 
-2.  Si todo está bien, verás un mensaje verde que dice algo como:
-    `Local: http://localhost:5173/`
+### Build para Producción
+Genera y optimiza los archivos para despliegue:
+```bash
+npm run build
+```
+Los archivos se generarán en la carpeta `dist/`.
 
-3.  Mantén presionada la tecla `Ctrl` y haz clic en ese link, o abre tu navegador (Chrome/Edge) y escribe `http://localhost:5173`.
-
-**¡Felicidades! Deberías ver la aplicación de Star Wars funcionando.** 🎉
-
----
-
-## 6. Subir a Internet (Despliegue en Vercel)
-
-Si quieres que todo el mundo vea tu página, sigue estos pasos para subirla a Vercel (es gratis y fácil).
-
-1.  Ve a [vercel.com](https://vercel.com) y crea una cuenta (puedes entrar con tu cuenta de GitHub).
-2.  En tu panel principal (Dashboard), haz clic en el botón blanco **"Add New..."** y elige **"Project"**.
-3.  Verás una lista de tus repositorios de GitHub. Busca el de este proyecto y dale al botón azul **"Import"**.
-
-### Configuración en Vercel (¡OJO AQUÍ!)
-
-Verás una pantalla de configuración. Solo necesitas tocar dos cosas:
-
-1.  **Framework Preset**: Asegúrate de que diga **Vite**. (Vercel suele adivinarlo solo).
-2.  **Root Directory**: Si tu repositorio tiene una carpeta `frontend`, dale a "Edit" y selecciona esa carpeta `frontend`. Si el repositorio ES el frontend, déjalo como está (`./`).
-3.  **Environment Variables** (Variables de Entorno):
-    -   Haz clic para desplegar esta sección.
-    -   Donde dice **Key** escribe: `VITE_API_URL`
-    -   Donde dice **Value** escribe: La URL de tu API de AWS (la misma que pusiste en el `.env`).
-    -   Dale a **Add**.
-
-4.  Finalmente, haz clic en el botón grande **Deploy**.
-
-Espera unos segundos... verás confeti 🎊 y un link a tu página en vivo.
+### Preview del Build
+Prueba localmente la versión de producción:
+```bash
+npm run preview
+```
 
 ---
 
-## 7. ¿Algo salió mal? (Solución de Problemas)
+## 🧪 Testing
 
-Aquí están los errores más comunes que comete la gente (y cómo arreglarlos):
-
-### ❌ Error: "npm command not found"
-**Solución**: No instalaste Node.js (Paso 1). Instálalo y reinicia tu terminal.
-
-### ❌ Error: "vite is not recognized"
-**Solución**: Te saltaste el paso `npm install` (Paso 3). Ejecútalo.
-
-### ❌ La página carga pero no veo personajes (pantalla vacía o loading infinito)
-**Solución**:
-1.  Tu variable `VITE_API_URL` está mal.
-2.  Abre la consola del navegador (F12 o Clic Derecho > Inspeccionar > Consola).
-3.  Si ves errores rojos, lee el mensaje.
-4.  Si dice `404`, la URL de la API está mal escrita.
-5.  Si dice `Network Error`, tu backend de AWS puede estar caído o la URL es incorrecta.
-
-### ❌ Error 404 al recargar la página en Vercel
-**Solución**: Vercel necesita saber que esto es una aplicación de una sola página.
-1.  Crea un archivo llamado `vercel.json` en la carpeta `frontend`.
-2.  Pega esto dentro:
-    ```json
-    {
-      "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
-    }
-    ```
-3.  Sube los cambios a GitHub (`git push`).
-
----
-
-## ✅ Pruebas y Validación (Evidencia)
-
-La aplicación ha sido validada mediante procesos de compilación y verificación de tipos.
+### Evidencia de Validación
+La aplicación ha sido validada mediante procesos de compilación y análisis estático.
 
 **Estado del Build (`npm run build`):**
 ```bash
@@ -194,7 +145,87 @@ dist/assets/index.js              243.89 kB
 ✓ built in 1.48s
 ```
 
+**Ejecutar Linter:**
+```bash
+npm run lint
+```
+
+---
+
+## 📁 Estructura del Proyecto
+
+```text
+frontend/
+├── src/
+│   ├── api/                # 🌐 Capa de red (Axios)
+│   ├── components/         # 🧩 Componentes UI Reutilizables
+│   │   ├── CharacterCard.tsx
+│   │   ├── Pagination.tsx
+│   │   └── ...
+│   ├── hooks/              # 🎣 Custom Hooks (Lógica de Negocio)
+│   │   ├── usePeople.ts    # Lógica principal de personajes
+│   ├── types/              # 📝 Definiciones TypeScript
+│   │   └── index.ts
+│   ├── App.tsx             # Componente Raíz
+│   └── main.tsx            # Punto de entrada
+├── public/                 # 🖼️ Assets estáticos
+├── .env                    # 🔐 Variables de entorno
+└── vite.config.ts          # ⚡ Configuración Vite
+```
+
+---
+
+## 🎯 Funcionalidades Principales
+
+1.  **Exploración de Personajes**: Consumo paginado de la API, mostrando tarjetas con detalles clave.
+2.  **Búsqueda Instantánea**: Filtrado por nombre que consulta directamente al backend.
+3.  **Persistencia de Favoritos**: Al dar "Like", el personaje se guarda permanentemente en la base de datos MySQL.
+
+---
+
+## 🧠 Decisiones Técnicas
+
+### ¿Por qué Vite en lugar de CRA?
+-   **Rendimiento**: Vite utiliza ES Modules nativos en desarrollo, lo que elimina los tiempos de espera de compilación.
+-   **Build Optimizado**: Usa Rollup para producción, generando bundles más pequeños y eficientes.
+
+### Arquitectura de Hooks
+Se decidió extraer la lógica a **Custom Hooks** (`usePeople`) para:
+-   **Separación de Intereses**: La UI no conoce la lógica de la API ni el manejo de estados complejos.
+-   **Reutilización**: Facilita compartir lógica entre componentes si la app crece.
+
+### División de Servicios API
+Se configuraron dos URLs base diferentes (`VITE_API_GET_URL` y `VITE_API_POST_URL`) en lugar de una sola.
+-   **Justificación**: Esto permite que el Frontend consuma microservicios desplegados independientemente (Pattern: Micro Frontends / Microservices consumtion). Si el servicio de lectura escala diferente al de escritura, el frontend ya está listo para soportar dominios distintos.
+
+---
+
+## 🌐 Deploy
+
+### Opción 1: Vercel (Recomendado)
+Este proyecto está optimizado para Vercel.
+1.  Importar proyecto desde GitHub.
+2.  Configurar **Framework Preset** como `Vite`.
+3.  Agregar las variables de entorno (`VITE_API_GET_URL`, etc.).
+4.  Deploy.
+
+### Opción 2: GitHub Pages
+Configurado mediante GitHub Actions.
+1.  Ajustar `base` en `vite.config.ts`.
+2.  Activar GitHub Pages en el repositorio (Source: GitHub Actions).
+
+---
+
+## 🐛 Solución de Problemas
+
+### Error 404 al recargar (Vercel)
+-   **Causa**: SPA Routing.
+-   **Solución**: Agregar `vercel.json` con reglas de reescritura.
+
+### CORS Error
+-   **Causa**: El backend no permite el origen.
+-   **Solución**: Verificar configuración `serverless.yml` en el backend.
+
 ---
 
 **Desarrollado por Adrian Nuñuvero Ochoa con cariño para la Prueba Técnica Seidor 2026**
-
